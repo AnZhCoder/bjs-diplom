@@ -20,7 +20,7 @@ newUserForm.registerFormCallback = (response) => {
     let password = response.password;
 
     ApiConnector.register({ login, password }, (response) => {
-        if (response.success === true) {
+        if (response.success) {
             location.reload();
         } else {
             newUserForm.setRegisterErrorMessage(response.error);
